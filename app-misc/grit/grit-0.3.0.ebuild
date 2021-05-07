@@ -44,8 +44,10 @@ go-module_set_globals
 
 DESCRIPTION="Grit is an experimental personal task manager that represents tasks as nodes of a multitree, a class of directed acyclic graphs."
 HOMEPAGE="https://github.com/climech/grit"
-SRC_URI="https://github.com/climech/grit/archive/refs/tags/v0.3.0.tar.gz -> ${P}.tar.gz
-	${EGO_SUM_SRC_URI}"
+SRC_URI="
+	https://github.com/climech/grit/archive/refs/tags/v0.3.0.tar.gz -> ${P}.tar.gz
+	${EGO_SUM_SRC_URI}
+"
 
 LICENSE="MIT"
 SLOT="0"
