@@ -13,11 +13,6 @@ KEYWORDS="~amd64"
 
 S=${WORKDIR}
 
-src_prepare() {
-	eapply_user
-	mv rust-analyzer-linux rust-analyzer
-}
-
 src_install() {
-	dobin ${S}/rust-analyzer || die "Install failed!"
+	newbin rust-analyzer-linux rust-analyzer || die "Install failed!"
 }
