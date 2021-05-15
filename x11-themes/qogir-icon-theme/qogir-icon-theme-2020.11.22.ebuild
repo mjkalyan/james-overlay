@@ -8,7 +8,7 @@ inherit xdg-utils
 
 DESCRIPTION="A flat colorful design icon theme for linux desktops"
 HOMEPAGE="https://github.com/vinceliuice/Qogir-icon-theme"
-SRC_URI="https://github.com/vinceliuice/Qogir-icon-theme/archive/refs/tags/2020-11-22.tar.gz"
+SRC_URI="https://github.com/vinceliuice/${PN}/archive/refs/tags/2020-11-22.tar.gz"
 
 # Extract to a non-default name
 S=${WORKDIR}/Qogir-icon-theme-2020-11-22
@@ -28,17 +28,18 @@ src_prepare() {
 	eapply_user
 
 	# Don't install the ubuntu/manjaro variants
-	sed -i 's:THEME_VARIANTS=.*:THEME_VARIANTS="":' install.sh || die "Sed failed!"
+	sed -i 's:THEME_VARIANTS=.*:THEME_VARIANTS="":' \
+		install.sh || die "Sed failed to remove theme variants!"
 
 	# Install cursors to Gentoo's cursor location
-	cursor_dest="${D}/usr/share/cursors/xorg-x11/Qogir\${color}"
-	sed -i "/cp.*cursors/i mkdir -p ${cursor_dest}" install.sh || die "Sed failed!"
-	sed -i "s:\(cp.*cursors\"\).*:\1 ${cursor_dest}:" install.sh || die "Sed failed!"
+	sed -i -e "/cp.*cursors/i mkdir -p \${CURSOR_DIR}/Qogir\${color}" \
+		-e "s:\(cp.*cursors\"\).*:\1 \${CURSOR_DIR}/Qogir\${color}:" \
+		install.sh || die "Sed failed changing cursor location!"
 }
 
 src_install() {
 	mkdir -p ${D}/usr/share/icons
-	${S}/install.sh -d ${D}/usr/share/icons
+	CURSOR_DIR=${D}/usr/share/cursors/xorg-x11 ${S}/install.sh -d ${D}/usr/share/icons
 }
 
 pkg_postinst() {
