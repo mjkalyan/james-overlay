@@ -3,8 +3,8 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{3,4,5,6,7,8,9} )
-
+# TODO: test 7 8 9
+PYTHON_COMPAT=( python2_7 python3_{3,4,5,6,7,8,9} )
 inherit distutils-r1
 
 DESCRIPTION="Implements the SPAKE2 password-authenticated key exchange ("PAKE") algorithm"

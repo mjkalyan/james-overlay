@@ -3,11 +3,10 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6,7,8,9,10} )
-
+PYTHON_COMPAT=( python3_{5,6,7,8,9} pypy3 )
 inherit distutils-r1
 
-DESCRIPTION="An implementation of the control-spec for Tor using the Twisted networking library"
+DESCRIPTION="An implementation of the Tor control-spec using the Twisted networking library"
 HOMEPAGE="https://github.com/meejah/txtorcon"
 SRC_URI="https://github.com/meejah/${PN}/archive/refs/tags/v${PV}.tar.gz"
 

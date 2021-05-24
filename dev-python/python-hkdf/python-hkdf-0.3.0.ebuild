@@ -3,8 +3,8 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{3,4,5,6,7,8,9} )
-
+# TODO: test 7 8 9
+PYTHON_COMPAT=( python2_{6,7} python3_{3,4,7,8,9} )
 inherit distutils-r1
 
 DESCRIPTION="This module implements the HMAC Key Derivation function"
