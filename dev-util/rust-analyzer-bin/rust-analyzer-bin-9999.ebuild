@@ -3,7 +3,7 @@
 
 EAPI=7
 
-DESCRIPTION="rust-analyzer is an implementation of Language Server Protocol for the Rust programming language"
+DESCRIPTION="An implementation of Language Server Protocol for the Rust programming language"
 HOMEPAGE="https://rust-analyzer.github.io"
 SRC_URI="https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux.gz"
 
