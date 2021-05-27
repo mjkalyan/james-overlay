@@ -39,13 +39,12 @@ winapi-i686-pc-windows-gnu-0.4.0
 winapi-x86_64-pc-windows-gnu-0.4.0
 "
 
-
 inherit cargo
 
 DESCRIPTION="A simple value-picker bar inspired by dmenu"
 HOMEPAGE="https://github.com/mjkalyan/dbar"
 SRC_URI="
-	https://github.com/mjkalyan/dbar/archive/refs/tags/0.1.0.tar.gz
+	https://github.com/mjkalyan/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 	$(cargo_crate_uris ${CRATES})
 "
 RESTRICT="mirror"
