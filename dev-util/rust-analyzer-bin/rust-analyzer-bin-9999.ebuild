@@ -11,15 +11,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 PROPERTIES="live"
 
-BDEPEND="net-misc/wget"
-
 S=${WORKDIR}
 
-src_unpack() {
-	wget ${SRC_URI}
-	unpack ${A}
-}
-
 src_install() {
-	newbin rust-analyzer-linux rust-analyzer || die "Install failed!"
+	newbin rust-analyzer-linux rust-analyzer
+	elog "Make sure to add your desired rust toolchain (e.g. with rustup) for rust-analyzer to work correctly"
 }
