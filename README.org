@@ -1,0 +1,3 @@
+#+TITLE: My Personal Gentoo Overlay
+
+Don't expect the ebuilds in this repository to be stable, complete, or well-tested. This is a basically just a staging area for ebuilds before I publish them to Gentoo's [[https://wiki.gentoo.org/wiki/Project:GURU][GURU]] ebuild repository.
