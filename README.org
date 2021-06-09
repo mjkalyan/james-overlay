@@ -1,3 +1,8 @@
-#+TITLE: My Personal Gentoo Overlay
+#+TITLE: My Personal Ebuild Repository
+
+Any system using Portage can enable this overlay. For example, using =eselect-repository=:
+#+begin_src sh
+eselect repository add james-overlay git https://github.com/mjkalyan/james-overlay.git
+#+end_src
 
 Don't expect the ebuilds in this repository to be stable, complete, or well-tested. This is a basically just a staging area for ebuilds before I publish them to Gentoo's [[https://wiki.gentoo.org/wiki/Project:GURU][GURU]] ebuild repository.
