@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# IUSE="postgresql"
+IUSE="systemd"
 
 RDEPEND="
 	>=dev-python/jsonschema-2.5.1
@@ -49,6 +49,12 @@ RDEPEND="
 	>=dev-python/typing-extensions-3.7.4
 	>=dev-python/cryptography-3.4.7
 	>=dev-python/ijson-3.0
+	systemd? ( >=dev-python/python-systemd-231 )
+"
+# Unlisted dependencies
+# importlib_metadata: necessary to use the provided generate_config script
+RDEPEND+="
+	dev-python/importlib_metadata
 "
 DEPEND="${RDEPEND}"
 
