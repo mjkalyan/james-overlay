@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <upstream>
+        <remote-id type="github">8go/matrix-commander</remote-id>
+        <bugs-to>https://github.com/8go/matrix-commander/issues</bugs-to>
+    </upstream>
+    <maintainer type="person">
+        <email>contrib_x@protonmail.com</email>
+        <name>James Kalyan</name>
+    </maintainer>
+    <use>
+        <flag name="notifications">Add support for desktop notifications (dbus notify2)</flag>
+        <flag name="markdown">Enable sending markdown formatted messages</flag>
+        <flag name="images">Enable sending image files</flag>
+    </use>
+</pkgmetadata>
