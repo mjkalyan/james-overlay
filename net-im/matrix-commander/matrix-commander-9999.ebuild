@@ -15,7 +15,7 @@ SLOT="0"
 PROPERTIES="live"
 # TODO: test absence of USE flags.
 IUSE="
-	+notifications
+	notifications
 	+markdown
 	+images
 "
