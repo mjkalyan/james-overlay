@@ -23,13 +23,12 @@ REQUIRED_USE="^^ ( gtk qt5 )"
 # `cl-webkit` and `cluffer` are required for a GTK install
 # they are included as submodules if using the makefile
 RDEPEND="
-	>=dev-lisp/sbcl-1.5.0
+	>=dev-lisp/sbcl-2.0.0
 	sys-libs/libfixposix
 	x11-misc/xclip
 	app-text/enchant
 	gtk? ( dev-lisp/cl-webkit
 		   dev-lisp/cluffer
-		   net-libs/webkit-gtk
 		   net-libs/glib-networking
 		   gnome-base/gsettings-desktop-schemas )
 	qt5? ( dev-lisp/cl-webengine
@@ -39,7 +38,6 @@ RDEPEND="
 		   dev-qt/qtwebengine )
 "
 DEPEND="${RDEPEND}"
-# BDEPEND=">=dev-lisp/sbcl-1.5.0"
 
 src_compile() {
 	if use gtk; then
