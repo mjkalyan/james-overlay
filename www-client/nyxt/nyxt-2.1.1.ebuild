@@ -17,11 +17,7 @@ KEYWORDS="~amd64"
 IUSE="gtk qt5"
 REQUIRED_USE="^^ ( gtk qt5 )"
 
-# 		   dev-lisp/quicklisp <--TODO: bdep only? also needs ebuild or else letting make install it, which seems wrong
 # 	qt5? ( dev-lisp/cl-webengine ) <--TODO: make ebuild
-
-# `cl-webkit` and `cluffer` are required for a GTK install
-# they are included as submodules if using the makefile
 RDEPEND="
 	>=dev-lisp/sbcl-2.0.0
 	sys-libs/libfixposix
@@ -47,5 +43,5 @@ src_compile() {
 	fi
 	local cmd="(asdf:make :nyxt/${toolkit}-application)"
 
-	sbcl --no-userinit --non-interactive --eval $cmd
+	sbcl --no-userinit --non-interactive --eval "${cmd}" || die "asdf:make failed!"
 }

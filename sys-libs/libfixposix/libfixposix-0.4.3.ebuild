@@ -7,7 +7,7 @@ DESCRIPTION="Thin wrapper over POSIX syscalls"
 HOMEPAGE="https://github.com/sionescu/libfixposix"
 SRC_URI="https://github.com/sionescu/${PN}/archive/refs/tags/v${PV}.tar.gz"
 
-# the real license is BSL-1.0 but it's not in the tree
+# TODO: fix license, the real license is BSL-1.0 but it's not in the tree
 LICENSE="BSL-1.1"
 SLOT="0"
 KEYWORDS="~amd64"
