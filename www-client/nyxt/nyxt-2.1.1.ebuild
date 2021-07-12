@@ -17,12 +17,22 @@ KEYWORDS="~amd64"
 IUSE="gtk qt5"
 REQUIRED_USE="^^ ( gtk qt5 )"
 
-# 	qt5? ( dev-lisp/cl-webengine ) <--TODO: make ebuild
+# qt5? ( dev-lisp/cl-webengine ) <--TODO: make ebuild
 RDEPEND="
 	>=dev-lisp/sbcl-2.0.0
 	sys-libs/libfixposix
 	x11-misc/xclip
 	app-text/enchant
+	dev-lisp/alexandria
+	dev-lisp/bordeaux-threads
+	dev-lisp/calispel
+	dev-lisp/cl-css
+	dev-lisp/cl-html-diff
+	dev-lisp/cl-json
+	dev-lisp/cl-markup
+	dev-lisp/cl-ppcre
+	dev-lisp/cl-ppcre-unicode
+	dev-lisp/cl-prevalence
 	gtk? ( dev-lisp/cl-webkit
 		   dev-lisp/cluffer
 		   net-libs/glib-networking
@@ -35,7 +45,15 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-src_compile() {
+src_prepare() {
+	rm nyxt-quicklisp.asd nyxt-ubuntu-package.asd default.nix
+
+	default
+}
+
+src_install() {
+	common-lisp-3_src_install
+
 	if use gtk; then
 		local toolkit="gtk"
 	else
