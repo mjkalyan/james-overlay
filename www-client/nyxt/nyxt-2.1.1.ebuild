@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 IUSE="gtk qt5"
 REQUIRED_USE="^^ ( gtk qt5 )"
 
-# qt5? ( dev-lisp/cl-webengine ) <--TODO: make ebuild
 RDEPEND="
 	>=dev-lisp/sbcl-2.0.0
 	sys-libs/libfixposix
@@ -38,6 +37,7 @@ RDEPEND="
 		   net-libs/glib-networking
 		   gnome-base/gsettings-desktop-schemas )
 	qt5? ( dev-lisp/cl-webengine
+		   dev-lisp/trivial-main-thread
 		   dev-qt/qtcore
 		   dev-qt/qtwebchannel
 		   dev-qt/qtdeclarative
