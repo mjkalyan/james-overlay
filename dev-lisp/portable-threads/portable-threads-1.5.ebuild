@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A uniform interface to commonly used thread (multiprocessing) entities"
 HOMEPAGE="http://gbbopen.org/hyperdoc/ref-portable-thread-entities.html"
-SRC_URI="http://gbbopen.org/svn/GBBopen/trunk/source/tools/portable-threads.lisp"
+SRC_URI="http://gbbopen.org/svn/GBBopen/trunk/source/tools/${PN}.lisp"
 
 LICENSE="Apache-2.0"
 SLOT="0"

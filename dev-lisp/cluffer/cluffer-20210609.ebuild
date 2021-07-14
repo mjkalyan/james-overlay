@@ -5,15 +5,14 @@ EAPI=7
 
 inherit common-lisp-3
 
+COMMIT="3d4639fee982f7428746624475bcc08d77e5ca86"
 DESCRIPTION="General-purpose text-editor buffer"
 HOMEPAGE="https://github.com/robert-strandh/Cluffer"
-SRC_URI="https://github.com/robert-strandh/${PN}/archive/refs/heads/master.zip -> ${PN}.zip"
+SRC_URI="https://github.com/robert-strandh/${PN}/archive/${COMMIT}.zip -> ${PN}.zip"
 
-
-# TODO: license
-LICENSE=""
+LICENSE="BSD-2"
 SLOT="0"
-PROPERTIES="live"
+KEYWORDS="~amd64"
 
 RDEPEND=""
 DEPEND="${RDEPEND}"

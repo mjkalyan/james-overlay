@@ -32,6 +32,29 @@ RDEPEND="
 	dev-lisp/cl-ppcre
 	dev-lisp/cl-ppcre-unicode
 	dev-lisp/cl-prevalence
+	dev-lisp/closer-mop
+	dev-lisp/cl-containers
+	dev-lisp/moptilities
+	dev-lisp/dexador
+	dev-lisp/cl-enchant
+	dev-lisp/iolib
+	dev-lisp/local-time
+	dev-lisp/log4cl
+	dev-lisp/mk-string-metrics
+	dev-lisp/osicat
+	dev-lisp/parenscript
+	dev-lisp/quri
+	dev-lisp/serapeum
+	dev-lisp/cl-str
+	dev-lisp/clss
+	dev-lisp/swank TODO: part of SLIME, but how do I install it?
+	dev-lisp/trivia
+	dev-lisp/trivial-clipboard
+	dev-lisp/trivial-features
+	dev-lisp/trivial-garbage
+	dev-lisp/trivial-package-local-nicknames
+	dev-lisp/trivial-types
+	dev-lisp/unix-opts
 	gtk? ( dev-lisp/cl-webkit
 		   dev-lisp/cluffer
 		   net-libs/glib-networking
