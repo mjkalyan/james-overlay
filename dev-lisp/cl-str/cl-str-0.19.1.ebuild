@@ -20,3 +20,5 @@ RDEPEND="
 	dev-lisp/cl-change-case
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

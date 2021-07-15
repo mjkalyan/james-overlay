@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/trivial-features
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}_${PV}"

@@ -16,3 +16,5 @@ KEYWORDS="~amd64"
 
 RDEPEND="dev-lisp/cffi"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

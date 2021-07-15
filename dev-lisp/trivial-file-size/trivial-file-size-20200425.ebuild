@@ -16,3 +16,5 @@ KEYWORDS="~amd64"
 
 RDEPEND="dev-lisp/uiop"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

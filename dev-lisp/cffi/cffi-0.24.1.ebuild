@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/babel
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}_${PV}"

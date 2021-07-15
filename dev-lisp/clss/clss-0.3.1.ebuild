@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/plump
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/CLSS-${COMMIT}"

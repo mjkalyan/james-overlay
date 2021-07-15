@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/documentation-utils
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

@@ -17,3 +17,5 @@ KEYWORDS="~amd64"
 # TODO: may need (#+sbcl #:sb-cltl2)
 RDEPEND=""
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

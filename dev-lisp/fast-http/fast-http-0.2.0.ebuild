@@ -14,12 +14,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# these last 2 deps are for debugging only (log4cl, smart-buffer)?
 RDEPEND="
 	dev-lisp/alexandria
 	dev-lisp/cl-utilities
 	dev-lisp/proc-parse
 	dev-lisp/babel
 	dev-lisp/xsubseq
+	dev-lisp/log4cl
+	dev-lisp/smart-buffer
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

@@ -47,7 +47,6 @@ RDEPEND="
 	dev-lisp/serapeum
 	dev-lisp/cl-str
 	dev-lisp/clss
-	dev-lisp/swank TODO: part of SLIME, but how do I install it?
 	dev-lisp/trivia
 	dev-lisp/trivial-clipboard
 	dev-lisp/trivial-features
@@ -66,6 +65,8 @@ RDEPEND="
 		   dev-qt/qtdeclarative
 		   dev-qt/qtwebengine )
 "
+# after dev-lisp/clss, put
+# dev-lisp/swank TODO: part of SLIME, but how do I install it?
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -82,7 +83,7 @@ src_install() {
 	else
 		local toolkit="qt"
 	fi
-	local cmd="(asdf:make :nyxt/${toolkit}-application)"
+	local cmd="(let ((asdf:*central-registry* (list #p\"${S}/\" asdf:*central-registry*))) (asdf:make :nyxt/${toolkit}-application))"
 
 	sbcl --no-userinit --non-interactive --eval "${cmd}" || die "asdf:make failed!"
 }

@@ -14,5 +14,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lisp/metautilities-0.6.6"
+RDEPEND=">=dev-lisp/metatilities-base-0.6.6"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"
+
+src_prepare() {
+	rm -r website
+	default
+}

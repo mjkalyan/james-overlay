@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/named-readtables
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/Parenscript-${PV}"
