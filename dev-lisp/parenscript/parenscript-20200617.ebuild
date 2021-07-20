@@ -5,9 +5,10 @@ EAPI=7
 
 inherit common-lisp-3
 
+COMMIT="1fd720bc4e2bc5ed92064391b730b9d4db35462a"
 DESCRIPTION="Lisp to JavaScript transpiler"
 HOMEPAGE="https://common-lisp.net/project/parenscript/"
-SRC_URI="https://common-lisp.net/project/${PN}/release/${P}.tgz"
+SRC_URI="https://gitlab.common-lisp.net/${PN}/${PN}/-/archive/${COMMIT}/${PN}-${COMMIT}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -20,4 +21,4 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/Parenscript-${PV}"
+S="${WORKDIR}/${PN}-${COMMIT}"

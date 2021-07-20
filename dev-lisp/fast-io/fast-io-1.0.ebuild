@@ -14,10 +14,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# TODO: #+fast-io-sv :static-vectors > needed or not?
 RDEPEND="
 	dev-lisp/alexandria
 	dev-lisp/trivial-gray-streams
+	dev-lisp/static-vectors
 "
 DEPEND="${RDEPEND}"
 

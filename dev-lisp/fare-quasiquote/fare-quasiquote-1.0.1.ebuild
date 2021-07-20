@@ -18,3 +18,10 @@ RDEPEND=">=dev-lisp/fare-utils-1.0.0"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}-${COMMIT}"
+
+src_install() {
+	common-lisp-3_src_install
+
+	insinto ${CLSOURCEROOT}/${CLPACKAGE}
+	doins version.text
+}

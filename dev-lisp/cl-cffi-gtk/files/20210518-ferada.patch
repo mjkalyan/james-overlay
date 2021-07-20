@@ -1,0 +1,16 @@
+diff '--color=auto' -ru /usr/share/common-lisp/source/cl-cffi-gtk/gtk/gtk.main-loop.lisp cl-cffi-gtk/gtk/gtk.main-loop.lisp
+--- /usr/share/common-lisp/source/cl-cffi-gtk/gtk/gtk.main-loop.lisp	2021-07-17 16:18:57.067868338 -0600
++++ cl-cffi-gtk/gtk/gtk.main-loop.lisp	2021-07-17 16:35:08.511609429 -0600
+@@ -265,7 +265,11 @@
+   (%gtk-init-check (foreign-alloc :int :initial-element 0)
+                    (foreign-alloc :string :initial-contents '("/usr/bin/sbcl")))
+   #+(and sbcl (not win32))
+-  (sb-unix::enable-interrupt sb-unix:sigpipe #'sb-unix::sigpipe-handler)
++  (let ((handler (find-symbol (string '#:sigpipe-handler) (string '#:sb-unix)))
++        (enable (find-symbol (string '#:enable-interrupt) (string '#:sb-unix)))
++        (signal (find-symbol (string '#:sigpipe) (string '#:sb-unix))))
++    (when handler
++      (funcall enable (symbol-value signal) (symbol-function handler))))
+   #+nil(with-foreign-objects ((argc :int)
+                          (argv '(:pointer :string) 1))
+     (setf (mem-ref argc :int) 0

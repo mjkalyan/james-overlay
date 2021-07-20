@@ -14,7 +14,13 @@ LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="
+	dev-lisp/lisp-namespace
+	dev-lisp/closer-mop
+	dev-lisp/type-i
+	dev-lisp/iterate
+	dev-lisp/alexandria
+"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}-${COMMIT}"

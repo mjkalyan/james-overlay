@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp I/O library"
 HOMEPAGE="https://common-lisp.net/project/iolib/"
-SRC_URI="https://common-lisp.net/project/${PN}/files/${P}.tar.gz"
+SRC_URI="https://github.com/sionescu/${PN}/archive/refs/tags/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,5 +21,15 @@ RDEPEND="
 	dev-lisp/cffi
 	dev-lisp/bordeaux-threads
 	dev-lisp/cl-ppcre
+	dev-lisp/idna
+	dev-lisp/swap-bytes
+	dev-lisp/split-sequence
 "
 DEPEND="${RDEPEND}"
+
+src_install() {
+	common-lisp-3_src_install
+
+	insinto ${CLSOURCEROOT}/${CLPACKAGE}
+	doins version.sexp
+}

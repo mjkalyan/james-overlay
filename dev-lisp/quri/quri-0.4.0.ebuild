@@ -9,7 +9,7 @@ DESCRIPTION="Yet another URI library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/quri"
 SRC_URI="https://github.com/fukamachi/${PN}/archive/refs/tags/${PV}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="BSD MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -21,3 +21,10 @@ RDEPEND="
 	dev-lisp/cl-utilities
 "
 DEPEND="${RDEPEND}"
+
+src_install() {
+	common-lisp-3_src_install
+
+	insinto ${CLSOURCEROOT}/${CLPACKAGE}/data
+	doins data/effective_tld_names.dat
+}

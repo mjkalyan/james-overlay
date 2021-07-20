@@ -13,5 +13,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="dev-lisp/uiop"
+RDEPEND="
+	dev-lisp/uiop
+	dev-lisp/cl-fad
+"
 DEPEND="${RDEPEND}"

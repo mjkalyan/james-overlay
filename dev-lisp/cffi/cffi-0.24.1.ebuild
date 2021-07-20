@@ -21,3 +21,10 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}_${PV}"
+
+src_install() {
+	common-lisp-3_src_install
+
+	insinto ${CLSOURCEROOT}/${CLPACKAGE}/grovel
+	doins grovel/common.h
+}

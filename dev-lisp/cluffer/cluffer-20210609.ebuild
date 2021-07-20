@@ -14,7 +14,10 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="
+	dev-lisp/acclimation
+	dev-lisp/clump
+"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/Cluffer-master

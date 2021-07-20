@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A binding to WebKitGTK+ for Common Lisp"
 HOMEPAGE="https://github.com/joachifm/cl-webkit"
-SRC_URI="https://github.com/joachifm/cl-webkit/archive/refs/tags/2.4.tar.gz"
+SRC_URI="https://github.com/joachifm/${PN}/archive/refs/tags/${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

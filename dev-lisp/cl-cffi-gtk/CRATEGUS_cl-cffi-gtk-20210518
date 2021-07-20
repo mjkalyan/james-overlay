@@ -1,0 +1,35 @@
+# Copyright 2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# FIXME: the Ferada version is used by nyxt, this version won't work as of yet.
+
+EAPI=7
+
+inherit common-lisp-3
+
+COMMIT="dfdbad5bb6f18aadb65b171561713af1dfe0dd50"
+DESCRIPTION="A Lisp binding to the GTK+ 3 library"
+HOMEPAGE="http://www.crategus.com/books/cl-cffi-gtk"
+SRC_URI="https://github.com/crategus/${PN}/archive/${COMMIT}.zip"
+
+LICENSE="LGPL-3"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND=""
+DEPEND="${RDEPEND}"
+
+S=${WORKDIR}/${PN}-${COMMIT}
+
+# Patch from Ferada's fork to avoid 'violating a lock on sb-unix when
+# interning SIGPIPE-HANDLER'
+PATCHES=(
+	"${FILESDIR}/${PV}-ferada.patch"
+)
+
+src_prepare() {
+	default
+
+	# Ham-fisted workaround for https://github.com/crategus/cl-cffi-gtk/issues/95
+	rm -r atdoc
+}

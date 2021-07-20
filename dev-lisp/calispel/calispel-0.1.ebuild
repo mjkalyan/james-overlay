@@ -22,5 +22,9 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
-	sed -i -e 's/eager-future/eager-future2/' ${PN}.asd
+
+	files=(${PN}.asd core.lisp test.lisp)
+	for file in ${files[@]}; do
+		sed -i -e 's/eager-future/eager-future2/' $file
+	done
 }

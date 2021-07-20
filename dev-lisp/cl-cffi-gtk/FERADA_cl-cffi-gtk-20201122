@@ -5,9 +5,10 @@ EAPI=7
 
 inherit common-lisp-3
 
+COMMIT="c4d539642de37ead24669fc0ef1a6f1dddd5c7a1"
 DESCRIPTION="A Lisp binding to the GTK+ 3 library"
 HOMEPAGE="http://www.crategus.com/books/cl-cffi-gtk"
-SRC_URI="https://github.com/crategus/cl-cffi-gtk/archive/refs/tags/cffi-0.11.2.tar.gz"
+SRC_URI="https://github.com/Ferada/${PN}/archive/${COMMIT}.zip"
 
 LICENSE="LGPL-3"
 SLOT="0"
@@ -16,4 +17,4 @@ KEYWORDS="~amd64"
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/${PN}-cffi-${PV}
+S=${WORKDIR}/${PN}-${COMMIT}

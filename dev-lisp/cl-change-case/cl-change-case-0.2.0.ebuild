@@ -18,3 +18,10 @@ RDEPEND="
 	dev-lisp/cl-ppcre-unicode
 "
 DEPEND="${RDEPEND}"
+
+src_install() {
+	common-lisp-3_src_install
+
+	insinto ${CLSOURCEROOT}/${CLPACKAGE}
+	doins version
+}

@@ -5,8 +5,8 @@ EAPI=7
 
 inherit common-lisp-3
 
-COMMIT="d4b3487c8613984bfe5cf3dcd2f34f347f51f587"
-DESCRIPTION="A Common Lisp abstraction layer over platform dependent functionality"
+COMMIT="7f8de283b7fbd8b038fdf08493063a736db36ce7"
+DESCRIPTION="An abstraction layer over platform dependent functionality"
 HOMEPAGE="https://github.com/svenvc/s-sysdeps"
 SRC_URI="https://github.com/svenvc/${PN}/archive/${COMMIT}.zip"
 

@@ -22,11 +22,13 @@ RDEPEND="
 	dev-lisp/trivial-gray-streams
 	dev-lisp/chunga
 	dev-lisp/cl-ppcre
+	dev-lisp/cl-cookie
 	dev-lisp/trivial-mimes
 	dev-lisp/chipz
 	dev-lisp/cl-base64
 	dev-lisp/cl-reexport
 	dev-lisp/usocket
+	dev-lisp/cl+ssl
 	dev-lisp/bordeaux-threads
 	dev-lisp/alexandria
 "

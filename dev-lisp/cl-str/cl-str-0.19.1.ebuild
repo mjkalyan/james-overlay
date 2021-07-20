@@ -22,3 +22,8 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}-${COMMIT}"
+
+src_prepare() {
+	sed -i -e '/:long-description/,+2d' str.asd
+	default
+}

@@ -5,23 +5,23 @@
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 desktop
 
 DESCRIPTION="A keyboard-oriented, infinitely extensible web browser designed for power users"
 HOMEPAGE="https://nyxt.atlas.engineer/"
 SRC_URI="https://github.com/atlas-engineer/${PN}/archive/refs/tags/${PV}.tar.gz"
 
-LICENSE=""
+LICENSE="BSD CC-BY-SA-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="gtk qt5"
+IUSE="+gtk -qt5 spell X"
 REQUIRED_USE="^^ ( gtk qt5 )"
 
 RDEPEND="
 	>=dev-lisp/sbcl-2.0.0
 	sys-libs/libfixposix
-	x11-misc/xclip
-	app-text/enchant
+	X? ( x11-misc/xclip )
+	spell? ( app-text/enchant )
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
 	dev-lisp/calispel
@@ -47,6 +47,7 @@ RDEPEND="
 	dev-lisp/serapeum
 	dev-lisp/cl-str
 	dev-lisp/clss
+	dev-lisp/swank
 	dev-lisp/trivia
 	dev-lisp/trivial-clipboard
 	dev-lisp/trivial-features
@@ -54,7 +55,7 @@ RDEPEND="
 	dev-lisp/trivial-package-local-nicknames
 	dev-lisp/trivial-types
 	dev-lisp/unix-opts
-	gtk? ( dev-lisp/cl-webkit
+	gtk? ( >=dev-lisp/cl-webkit-3.0.0
 		   dev-lisp/cluffer
 		   net-libs/glib-networking
 		   gnome-base/gsettings-desktop-schemas )
@@ -65,9 +66,15 @@ RDEPEND="
 		   dev-qt/qtdeclarative
 		   dev-qt/qtwebengine )
 "
-# after dev-lisp/clss, put
-# dev-lisp/swank TODO: part of SLIME, but how do I install it?
+# Other deps for local systems
+RDEPEND+="
+	dev-lisp/cl-custom-hash-table
+	dev-lisp/hu_dwim_defclass-star
+	dev-lisp/hu_dwim_asdf
+	dev-lisp/fset
+"
 DEPEND="${RDEPEND}"
+BDEPEND=">=dev-lisp/sbcl-2.0.0"
 
 src_prepare() {
 	rm nyxt-quicklisp.asd nyxt-ubuntu-package.asd default.nix
@@ -75,9 +82,7 @@ src_prepare() {
 	default
 }
 
-src_install() {
-	common-lisp-3_src_install
-
+src_compile() {
 	if use gtk; then
 		local toolkit="gtk"
 	else
@@ -85,5 +90,14 @@ src_install() {
 	fi
 	local cmd="(let ((asdf:*central-registry* (list #p\"${S}/\" asdf:*central-registry*))) (asdf:make :nyxt/${toolkit}-application))"
 
-	sbcl --no-userinit --non-interactive --eval "${cmd}" || die "asdf:make failed!"
+	# TODO: run single-threaded otherwise sbcl cannot save the image
+	MAKEOPTS="-j1" sbcl --no-userinit --non-interactive --eval "${cmd}" || die "asdf:make failed!"
+}
+
+src_install() {
+	common-lisp-3_src_install
+
+	dobin nyxt
+	domenu assets/nyxt.desktop
+	doicon assets/nyxt_16x16.png assets/nyxt_32x32.png
 }
