@@ -1,8 +1,6 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-# for reference https://gitlab.com/plexvola/vaacus/-/blob/master/www-client/nyxt/nyxt-9999.ebuild
-
 EAPI=7
 
 inherit common-lisp-3 desktop
@@ -55,7 +53,7 @@ RDEPEND="
 	dev-lisp/trivial-package-local-nicknames
 	dev-lisp/trivial-types
 	dev-lisp/unix-opts
-	gtk? ( >=dev-lisp/cl-webkit-3.0.0
+	gtk? ( dev-lisp/cl-webkit
 		   dev-lisp/cluffer
 		   net-libs/glib-networking
 		   gnome-base/gsettings-desktop-schemas )
@@ -88,10 +86,12 @@ src_compile() {
 	else
 		local toolkit="qt"
 	fi
-	local cmd="(let ((asdf:*central-registry* (list #p\"${S}/\" asdf:*central-registry*))) (asdf:make :nyxt/${toolkit}-application))"
+	local cmd="(asdf:make :nyxt/${toolkit}-application)"
 
 	# TODO: run single-threaded otherwise sbcl cannot save the image
-	MAKEOPTS="-j1" sbcl --no-userinit --non-interactive --eval "${cmd}" || die "asdf:make failed!"
+	sbcl --no-userinit --non-interactive \
+		--eval "(setf asdf:*central-registry* (list #p\"${S}/\" asdf:*central-registry*))" \
+		--eval "${cmd}" || die "asdf:make failed!"
 }
 
 src_install() {
