@@ -46,11 +46,11 @@ src_prepare() {
 }
 
 src_install() {
-	dobin betterlockscreen
+	dobin ${PN}
 
 	dodoc -r examples
 
-	use systemd && systemd_dounit system/betterlockscreen@.service
+	use systemd && systemd_dounit system/${PN}@.service
 }
 
 pkg_postinst() {
