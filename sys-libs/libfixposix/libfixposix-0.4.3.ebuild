@@ -20,7 +20,7 @@ BDEPEND="
 	>=sys-devel/autoconf-2.67
 	>=sys-devel/automake-1.10
 	>=sys-devel/libtool-2.2.6
-	dev-util/pkgconfig
+	dev-util/pkgconf
 	test? ( dev-libs/check )
 "
 
