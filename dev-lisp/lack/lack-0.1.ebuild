@@ -21,11 +21,11 @@ RDEPEND="
 	dev-lisp/babel
 
 	dev-lisp/cl-redis
-	dev-lisp/marshal
+	dev-lisp/cl-marshal
 	dev-lisp/cl-base64
 	dev-lisp/trivial_utf_8
 
-	dev-lisp/dbi
+	dev-lisp/cl-dbi
 
 	dev-lisp/quri
 	dev-lisp/local-time
@@ -46,3 +46,5 @@ RDEPEND="
 	dev-lisp/trivial_rfc_1123
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

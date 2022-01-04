@@ -56,3 +56,5 @@ RDEPEND="
 	)
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

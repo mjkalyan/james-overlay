@@ -24,3 +24,5 @@ RDEPEND="
 	dev-lisp/trivial-types
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

@@ -25,3 +25,5 @@ RDEPEND="
 	dev-lisp/trivial-gray-streams
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

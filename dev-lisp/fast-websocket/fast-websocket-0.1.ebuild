@@ -20,3 +20,5 @@ RDEPEND="
 	dev-lisp/alexandria
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

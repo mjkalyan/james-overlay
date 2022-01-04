@@ -24,3 +24,5 @@ RDEPEND="
 	dev-lisp/bordeaux-threads
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

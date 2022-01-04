@@ -17,3 +17,5 @@ KEYWORDS="~amd64"
 # TODO potentially missing deps (most were other systems in this package)
 RDEPEND=""
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN^^}-${COMMIT}"

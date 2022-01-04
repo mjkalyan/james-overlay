@@ -25,3 +25,5 @@ RDEPEND="
 	dev-lisp/cl-annot
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

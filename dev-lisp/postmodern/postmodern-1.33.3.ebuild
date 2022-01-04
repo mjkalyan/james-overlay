@@ -6,10 +6,11 @@ EAPI=7
 inherit common-lisp-3
 
 DESCRIPTION="PostgreSQL programming API"
-HOMEPAGE="https://github.com/marijnh/Postmodern"
+HOMEPAGE="https://marijnhaverbeke.nl/postmodern/"
 SRC_URI="https://github.com/marijnh/${PN}/archive/refs/tags/v${PV}.tar.gz"
 
-LICENSE="ZLIB MIT UC-postgres"
+LICENSE="ZLIB MIT BSD"
+SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -25,3 +26,5 @@ RDEPEND="
 	dev-lisp/usocket
 "
 DEPEND="${RDEPEND}"
+
+S=${WORKDIR}/${P^}

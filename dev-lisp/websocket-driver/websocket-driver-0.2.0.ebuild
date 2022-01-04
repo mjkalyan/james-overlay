@@ -31,3 +31,5 @@ RDEPEND="
 	dev-lisp/clack
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

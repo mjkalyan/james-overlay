@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/closer-mop
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

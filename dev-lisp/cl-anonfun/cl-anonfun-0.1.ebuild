@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3
 
-COMMIT="c99e69c15d935eabc671b483349a406e0da9518d"
+COMMIT="ef3c16cefa80eacce9129ff98f751b8f6f19c237"
 DESCRIPTION="Anonymous function helpers for Common Lisp"
 HOMEPAGE="https://github.com/arielnetworks/cl-anonfun"
 SRC_URI="https://github.com/arielnetworks/${PN}/archive/${COMMIT}.zip"
@@ -16,3 +16,5 @@ KEYWORDS="~amd64"
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

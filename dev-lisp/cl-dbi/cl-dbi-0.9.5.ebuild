@@ -8,7 +8,7 @@ inherit common-lisp-3
 COMMIT="738a74dd69adb2a7c21fa67e140d89c7df25b227"
 DESCRIPTION="Database independent interface for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/cl-dbi"
-SRC_URI="https://github.com/fukamachi/cl-dbi/archive/${COMMIT}.zip"
+SRC_URI="https://github.com/fukamachi/${PN}/archive/${COMMIT}.zip"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -20,7 +20,9 @@ RDEPEND="
 	dev-lisp/closer-mop
 	dev-lisp/postmodern
 	dev-lisp/split-sequence
-	dev-lisp/sqlite
+	dev-lisp/cl-sqlite
 	dev-lisp/trivial-garbage
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT}"

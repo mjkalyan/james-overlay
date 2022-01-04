@@ -3,15 +3,18 @@
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3
 
+COMMIT="3462e0f881c9a25858eee6db6cd3773eccda5ce9"
 DESCRIPTION="Minimal parsing of rfc-1123 date-time strings"
 HOMEPAGE="https://github.com/stacksmith/trivial-rfc-1123"
-EGIT_REPO_URI="https://github.com/stacksmith/${PN}.git"
+SRC_URI="https://github.com/stacksmith/${PN//_/-}/archive/${COMMIT}.zip"
 
 LICENSE="BSD BSD-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 
 RDEPEND="dev-lisp/cl-ppcre"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN//_/-}-${COMMIT}"

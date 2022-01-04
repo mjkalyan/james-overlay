@@ -19,3 +19,5 @@ RDEPEND="
 	dev-lisp/iterate
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${PN}-${COMMIT:0:7}"
