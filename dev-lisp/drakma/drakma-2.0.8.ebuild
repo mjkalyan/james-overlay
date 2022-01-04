@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-lisp/puri
+	>=dev-lisp/puri-1.5.7_p20200930
 	dev-lisp/cl-base64
 	dev-lisp/chunga
 	dev-lisp/flexi-streams
