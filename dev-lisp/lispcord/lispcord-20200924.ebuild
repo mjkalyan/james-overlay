@@ -16,12 +16,13 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-lisp/alexandria
-	dev-lisp/verbose
-	dev-lisp/split-sequence
 	dev-lisp/babel
-	dev-lisp/websocket-driver
-	dev-lisp/jonathan
 	dev-lisp/bordeaux-threads
+	dev-lisp/drakma
+	dev-lisp/jonathan
+	dev-lisp/split-sequence
+	dev-lisp/verbose
+	dev-lisp/websocket-driver
 "
 DEPEND="${RDEPEND}"
 
