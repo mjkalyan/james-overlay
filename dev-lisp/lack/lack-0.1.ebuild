@@ -23,7 +23,7 @@ RDEPEND="
 	dev-lisp/cl-redis
 	dev-lisp/marshal
 	dev-lisp/cl-base64
-	dev-lisp/trivial-utf-8
+	dev-lisp/trivial_utf_8
 
 	dev-lisp/dbi
 
@@ -43,6 +43,6 @@ RDEPEND="
 	dev-lisp/split-sequence
 
 	dev-lisp/trivial-mimes
-	dev-lisp/trivial-rfc-1123
+	dev-lisp/trivial_rfc_1123
 "
 DEPEND="${RDEPEND}"

@@ -20,7 +20,7 @@ RDEPEND="
 	dev-lisp/global-vars
 	dev-lisp/ironclad
 	dev-lisp/split-sequence
-	dev-lisp/uax-15
+	dev-lisp/uax_15
 	dev-lisp/uiop
 	dev-lisp/usocket
 "
