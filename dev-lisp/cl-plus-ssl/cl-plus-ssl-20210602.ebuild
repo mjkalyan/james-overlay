@@ -1,15 +1,14 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3
 
-PNAME="cl-plus-ssl"
 COMMIT="b2caafe487fc258f2b26cd1271e0b817f27cbb0a"
 DESCRIPTION="Common Lisp interface to OpenSSL"
 HOMEPAGE="https://github.com/cl-plus-ssl/cl-plus-ssl/"
-SRC_URI="https://github.com/${PNAME}/${PNAME}/archive/${COMMIT}.zip"
+SRC_URI="https://github.com/${PN}/${PN}/archive/${COMMIT}.zip"
 
 LICENSE="MIT"
 SLOT="0"
@@ -28,4 +27,4 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${PNAME}-${COMMIT}"
+S="${WORKDIR}/${PN}-${COMMIT}"
