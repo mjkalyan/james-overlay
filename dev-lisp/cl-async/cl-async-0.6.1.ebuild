@@ -28,3 +28,5 @@ RDEPEND="
 	dev-lisp/vom
 "
 DEPEND="${RDEPEND}"
+
+S=${WORKDIR}/${PN}-${COMMIT}
