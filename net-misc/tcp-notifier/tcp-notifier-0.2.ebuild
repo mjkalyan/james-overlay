@@ -1,9 +1,7 @@
 # Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
-
-inherit common-lisp-3
+EAPI=8
 
 DESCRIPTION="A TCP server to listen for notifications"
 HOMEPAGE="https://gitlab.com/mjkalyan/tcp-notifier"
@@ -13,7 +11,11 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-BDEPEND="dev-lisp/sbcl"
+BDEPEND="
+	dev-lisp/cl-async
+	dev-lisp/flexi-streams
+	dev-lisp/sbcl
+"
 
 src_compile () {
 	sbcl --load tcp-notifier.asd --eval '(require :tcp-notifier)' \
