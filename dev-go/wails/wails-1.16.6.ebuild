@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -121,7 +121,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin wails
+	dobin ${PN}
 
 	if use doc; then
 		DOCS="README.md"
