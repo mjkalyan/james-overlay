@@ -13,9 +13,9 @@ SRC_URI="https://github.com/fukamachi/${PN}/archive/${COMMIT}.zip"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="server wookie toot hunchentoot fcgi"
+IUSE="fcgi hunchentoot server toot wookie"
 REQUIRED_USE="
-	server? ( ^^ ( wookie toot hunchentoot fcgi ) )
+	server? ( ^^ ( fcgi hunchentoot toot wookie ) )
 "
 
 RDEPEND="
