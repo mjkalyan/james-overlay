@@ -1,14 +1,14 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 # FIXME Why do I have to set these??
-EPYTHON=python3.9
+EPYTHON=python3.10
 PYTHON=${EPYTHON}
 BUILD_DIR=${S}
 
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{6,7,8,9,10} )
 inherit distutils-r1
 
 DESCRIPTION="A pass extension for importing data from most existing password managers"
